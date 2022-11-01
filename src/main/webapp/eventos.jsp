@@ -35,17 +35,17 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="./img/logo.jpg" height="58" alt=""></a>
+                        <a href="index.jsp"><img src="./img/logo.jpg" height="58" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li><a href="./index.html">página inicial</a></li>
-                                <li><a href="sobre.html">Sobre</a></li>
-                                <li class="active"><a href="eventos.html">Eventos</a></li>
-                                <li><a href="contacto.html">Contacto</a></li>
+                                <li><a href="index.jsp">página inicial</a></li>
+                                <li><a href="sobre.jsp">Sobre</a></li>
+                                <li class="active"><a href="eventos.jsp">Eventos</a></li>
+                                <li><a href="contacto.jsp">Contacto</a></li>
                             </ul>
                         </nav>
                         <div class="header__right__social">
@@ -256,9 +256,6 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- Music Plugin -->
-    <script src="js/jquery.jplayer.min.js"></script>
-    <script src="js/jplayerInit.js"></script>
 </body>
 
 </html>

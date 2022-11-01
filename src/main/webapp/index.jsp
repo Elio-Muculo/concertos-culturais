@@ -1,6 +1,13 @@
+<jsp:useBean scope="page" id="eve" class="com.cultural.eventosculturais.controller.dao.EventoDao"></jsp:useBean>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ page import="com.cultural.eventosculturais.model.Evento" %>
+<%@ page import="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html lang="zxx">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,17 +44,17 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="./img/logo.jpg" height="58" alt=""></a>
+                        <a href="home"><img src="./img/logo.jpg" height="58" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./index.html">página inicial</a></li>
-                                <li  ><a href="sobre.html">Sobre</a></li>
-                                <li ><a href="eventos.html">Eventos</a></li>
-                                <li><a href="contacto.html">Contacto</a></li>
+                                <li class="active"><a href="./index.jsp">pagina inicial</a></li>
+                                <li  ><a href="sobre.jsp">Sobre</a></li>
+                                <li ><a href="eventos.jsp">Eventos</a></li>
+                                <li><a href="contacto.jsp">Contacto</a></li>
                             </ul>
                         </nav>
                         <div class="header__right__social">
@@ -65,16 +72,15 @@
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero spad set-bg" data-setbg="img/hero-bg.png">
+    <section class="hero spad set-bg" data-setbg="img/Gilberto-Mendes.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="hero__text">
-                        <span>Teatro Gungu Apresenta:</span>
-                        <h1>Lorem ipsum dolor sit amet</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br />tempor
+                        <span style="opacity: 1;">Teatro Gungu Apresenta:</span>
+                        <h1 style="visibility: hidden">Lorem ipsum dolor sit amet</h1>
+                        <p style="visibility: hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br />tempor
                             incididunt ut labore et dolore magna aliqua.</p>
-
                     </div>
                 </div>
             </div>
@@ -91,64 +97,29 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Upcoming Events</h2>
+                        <h2>Proximos Eventos</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="event__slider owl-carousel">
+                    <c:forEach var="eventos" items="${eve.lista}">
+                    <a href="Bilhete?id=${eventos.codigo}">
                     <div class="col-lg-4">
                         <div class="event__item">
-                            <div class="event__item__pic set-bg" data-setbg="img/events/event-1.jpg">
+                            <div class="event__item__pic set-bg" data-setbg="img/events/evento-${eventos.codigo}.jpg">
                                 <div class="tag-date">
                                     <span>Dec 15, 2019</span>
                                 </div>
                             </div>
                             <div class="event__item__text">
-                                <h4>David Guetta Miami Ultra</h4>
-                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
+                                <h4>${eventos.name}</h4>
+                                <p><i class="fa fa-map-marker"></i>${eventos.local_evento}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="event__item">
-                            <div class="event__item__pic set-bg" data-setbg="img/events/event-2.jpg">
-                                <div class="tag-date">
-                                    <span>Dec 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="event__item__text">
-                                <h4>David Guetta Miami Ultra</h4>
-                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="event__item">
-                            <div class="event__item__pic set-bg" data-setbg="img/events/event-3.jpg">
-                                <div class="tag-date">
-                                    <span>Dec 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="event__item__text">
-                                <h4>David Guetta Miami Ultra</h4>
-                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="event__item">
-                            <div class="event__item__pic set-bg" data-setbg="img/events/event-2.jpg">
-                                <div class="tag-date">
-                                    <span>Dec 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="event__item__text">
-                                <h4>David Guetta Miami Ultra</h4>
-                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
+                    </c:forEach>
                 </div>
             </div>
         </div>
@@ -277,11 +248,11 @@
                     </div>
                 </div>
             </div>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <!-- Link  -->
 			<div class="footer__copyright__text">
-				<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved |  <i class="fa fa-heart" aria-hidden="true"></i> por <a href="#" target="_blank">Grupo Debug.log</a></p>
+				<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Todos direitos reservados |  <i class="fa fa-heart" aria-hidden="true"></i> por <a href="#" target="_blank">Grupo Debug.log</a></p>
 			</div>
-			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			<!-- Link  -->
         </div>
     </footer>
     <!-- Footer Section End -->
@@ -296,8 +267,5 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
-
 </body>
-
 </html>

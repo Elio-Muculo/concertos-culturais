@@ -1,0 +1,54 @@
+package com.cultural.eventosculturais.controller.dao;
+
+import com.cultural.eventosculturais.controller.utils.ConnectionFactory;
+import com.cultural.eventosculturais.model.Utilizador;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class UtilizadorDao {
+    Connection connection;
+
+    public  UtilizadorDao() {
+        this.connection = new ConnectionFactory().getConnection();
+    }
+
+    public void adiciona(Utilizador utilizador) {
+        String sql = "INSERT INTO utilizador (email, senha, perfil) VALUES (?, ?, ?)";
+        try {
+            PreparedStatement stmt = this.connection.prepareStatement(sql);
+            stmt.setString(1, utilizador.getEmail());
+            stmt.setString(2, utilizador.getSenha());
+            stmt.setString(3, "espectador");
+
+            stmt.execute();
+            stmt.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Utilizador getUtilizador(Utilizador utilizador) {
+        String sql = "select * from utilizador where email = ?";
+        Utilizador utilizador1 = new Utilizador();
+        try {
+            PreparedStatement stmt = this.connection.prepareStatement(sql);
+            stmt.setString(1, utilizador.getEmail());
+            ResultSet set = stmt.executeQuery();
+
+            while (set.next()) {
+                utilizador1.setCodigo(set.getInt("codigo"));
+                utilizador1.setEmail(set.getString("email"));
+                utilizador1.setSenha(set.getString("senha"));
+                utilizador1.setPerfil(set.getString("perfil"));
+            }
+
+            stmt.close();
+            return utilizador1;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}

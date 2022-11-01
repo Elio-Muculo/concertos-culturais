@@ -36,7 +36,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="background-color: #febc0d">
             <div class="container">
-                <a class="navbar-brand" style="color: #000" href="index.html">
+                <a class="navbar-brand" style="color: #000" href="index.jsp">
                     Teatro Gungu | Apresenta.
                 </a>
             </div>
@@ -53,7 +53,7 @@
                         <div class="card-header" style="background-color: #febc0d">Seja Bem-vindo | Criar uma conta</div>
                         <div class="card-body align-content-center pt-3 mt-3 pt-md-5 mt-md-5">
 
-                            <form method="POST" action="">
+                            <form method="POST" action="UtilizadorServlet">
                                 <div class="row mb-3">
                                     <label for="email" class="col-md-4 col-form-label text-md-end" style="color: #ffff">Endereço Email</label>
                                     <div class="col-md-8">
