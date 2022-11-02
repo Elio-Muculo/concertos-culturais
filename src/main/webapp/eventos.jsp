@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:useBean scope="page" id="eventos" class="com.cultural.eventosculturais.controller.dao.EventoDao"></jsp:useBean>
+<%@ page import="com.cultural.eventosculturais.model.Evento" %>
+<%@ page import="java.util.ArrayList" %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DJoz | Template</title>
+    <title>Teatro Gungu | Eventos</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -44,15 +47,21 @@
                             <ul>
                                 <li><a href="index.jsp">página inicial</a></li>
                                 <li><a href="sobre.jsp">Sobre</a></li>
-                                <li class="active"><a href="eventos.jsp">Eventos</a></li>
+                                <li class="active"><a href="evento.jsp">Eventos</a></li>
                                 <li><a href="contacto.jsp">Contacto</a></li>
                             </ul>
                         </nav>
                         <div class="header__right__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <c:choose>
+                                <c:when test="${user == null}">
+                                    <a class="btn btn-link m-l-0" href="login.jsp" style="padding: 0; border: none; text-decoration: none; color: #000; font-size: 16px">
+                                        iniciar sessão
+                                    </a>
+                                </c:when>
+                                <c:otherwise>
+                                    <p style="color: #000">${user.email}</p>
+                                </c:otherwise>
+                            </c:choose>
                         </div>
                     </div>
                 </div>
@@ -101,10 +110,11 @@
     <!-- Tours Section Begin -->
     <section class="tours spad">
         <div class="container">
+            <c:forEach var="evento" items="${eventos.lista}">
             <div class="row">
                 <div class="col-lg-6 order-lg-1">
                     <div class="tours__item__text">
-                        <h2>Untold Festival 2020</h2>
+                        <h2>${evento.name}</h2>
                         <div class="tours__text__widget">
                             <ul>
                                 <li>
@@ -114,10 +124,10 @@
                                 </li>
                                 <li>
                                     <i class="fa fa-map-marker"></i>
-                                    Funkhaus Berlin, Berlin, Germany
+                                    ${evento.local_evento}
                                 </li>
                             </ul>
-                            <div class="price">$ 35.00</div>
+                            <div class="price">MZN ${evento.valor_evento}</div>
                         </div>
                         <div class="tours__text__desc">
                             <p>Held in Europe’s electronic music capital on New Year’s Eve, the seminal Funkhaus Berlin
@@ -125,77 +135,16 @@
                             <p>Soundtracking the leap from 2019 into 2020 in what is one of the most anticipated nights
                                 of the year, in one of the city’s most hyped venues, HYTE Berlin NYE is the</p>
                         </div>
-                        <a href="#" class="primary-btn border-btn">Buy tickets</a>
+                        <a href="Bilhete?id=${evento.codigo}" class="primary-btn border-btn">Comprar Bilhete</a>
                     </div>
                 </div>
-                <div class="col-lg-6 order-lg-2">
+                <div class="col-lg-6">
                     <div class="tours__item__pic">
-                        <img src="img/tours/tour-1.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-4">
-                    <div class="tours__item__text tours__item__text--right">
-                        <h2>Untold Festival 2020</h2>
-                        <div class="tours__text__widget">
-                            <ul>
-                                <li>
-                                    <i class="fa fa-clock-o"></i>
-                                    <span>8:00pm</span>
-                                    <span>Dec 15, 2019</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-map-marker"></i>
-                                    Funkhaus Berlin, Berlin, Germany
-                                </li>
-                            </ul>
-                            <div class="price">$ 35.00</div>
-                        </div>
-                        <div class="tours__text__desc">
-                            <p>Held in Europe’s electronic music capital on New Year’s Eve, the seminal Funkhaus Berlin
-                                hosts an impressive roster of techno artists worthy.</p>
-                            <p>Soundtracking the leap from 2019 into 2020 in what is one of the most anticipated nights
-                                of the year, in one of the city’s most hyped venues, HYTE Berlin NYE is the</p>
-                        </div>
-                        <a href="#" class="primary-btn border-btn">Buy tickets</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-3">
-                    <div class="tours__item__pic tours__item__pic--left">
-                        <img src="img/tours/tour-2.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-5">
-                    <div class="tours__item__text">
-                        <h2>Untold Festival 2020</h2>
-                        <div class="tours__text__widget">
-                            <ul>
-                                <li>
-                                    <i class="fa fa-clock-o"></i>
-                                    <span>8:00pm</span>
-                                    <span>Dec 15, 2019</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-map-marker"></i>
-                                    Funkhaus Berlin, Berlin, Germany
-                                </li>
-                            </ul>
-                            <div class="price">$ 35.00</div>
-                        </div>
-                        <div class="tours__text__desc">
-                            <p>Held in Europe’s electronic music capital on New Year’s Eve, the seminal Funkhaus Berlin
-                                hosts an impressive roster of techno artists worthy.</p>
-                            <p>Soundtracking the leap from 2019 into 2020 in what is one of the most anticipated nights
-                                of the year, in one of the city’s most hyped venues, HYTE Berlin NYE is the</p>
-                        </div>
-                        <a href="#" class="primary-btn border-btn">Buy tickets</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-6">
-                    <div class="tours__item__pic tours__item__pic--last">
-                        <img src="img/tours/tour-3.jpg" alt="">
+                        <img src="img/events/evento-${evento.codigo}.jpg" alt="${evento.name}" width="475" height="475">
                     </div>
                 </div>
             </div>
+            </c:forEach>
         </div>
     </section>
     <!-- Tours Section End -->

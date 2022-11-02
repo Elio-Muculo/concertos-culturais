@@ -4,6 +4,7 @@
   Date: 29/10/2022
   Time: 19:52
 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -55,7 +56,7 @@
                         <div class="card-body align-content-center pt-3 mt-3 pt-md-5 mt-md-5">
 
                             <form method="POST" action="LoginServlet">
-                               <c:if >
+                               <c:if test="${msg != null}">
                                    <div class="alert alert-danger" role="alert">
                                            ${msg}
                                    </div>

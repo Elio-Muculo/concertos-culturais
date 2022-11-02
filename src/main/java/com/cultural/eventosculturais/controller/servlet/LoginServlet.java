@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher(uri);
             rd.forward(request, response);
         } else {
-            session.setAttribute("msg", "Erro ao autenticar, nome ou senha incorrectos!");
+            session.setAttribute("msg", "Erro ao autenticar, email ou senha incorrectos!");
             response.sendRedirect("login.jsp");
         }
     }

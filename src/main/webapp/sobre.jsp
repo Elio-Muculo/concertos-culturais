@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <head>
     <meta charset="UTF-8">
@@ -44,15 +45,21 @@
                             <ul>
                                 <li><a href="index.jsp">página inicial</a></li>
                                 <li class="active"><a href="sobre.jsp">Sobre</a></li>
-                                <li><a href="eventos.jsp">Eventos</a></li>
+                                <li><a href="EventosServlet">Eventos</a></li>
                                 <li><a href="contacto.jsp">Contacto</a></li>
                             </ul>
                         </nav>
                         <div class="header__right__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <c:choose>
+                                <c:when test="${user == null}">
+                                    <a class="btn btn-link m-l-0" href="login.jsp" style="padding: 0; border: none; text-decoration: none; color: #000; font-size: 16px">
+                                        iniciar sessão
+                                    </a>
+                                </c:when>
+                                <c:otherwise>
+                                    <p style="color: #000">${user.email}</p>
+                                </c:otherwise>
+                            </c:choose>
                         </div>
                     </div>
                 </div>
