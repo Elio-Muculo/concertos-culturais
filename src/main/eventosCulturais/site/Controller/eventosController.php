@@ -31,7 +31,7 @@ session_start();
 var_dump($a);
 echo "<hr>";
 
-    $target_dir = "../../webapp/img/";
+    $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["cartaz"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
