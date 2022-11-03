@@ -38,14 +38,14 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2">
                     <div class="header__logo">
-                        <a href="index.jsp"><img src="./img/logo.jpg" height="58" alt=""></a>
+                        <a href="InicioServlet"><img src="./img/logo.jpg" height="58" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li><a href="index.jsp">página inicial</a></li>
+                                <li><a href="InicioServlet">página inicial</a></li>
                                 <li><a href="sobre.jsp">Sobre</a></li>
                                 <li class="active"><a href="evento.jsp">Eventos</a></li>
                                 <li><a href="contacto.jsp">Contacto</a></li>
@@ -110,7 +110,7 @@
     <!-- Tours Section Begin -->
     <section class="tours spad">
         <div class="container">
-            <c:forEach var="evento" items="${eventos.lista}">
+            <c:forEach var="evento" items="${eventosTodos}">
             <div class="row">
                 <div class="col-lg-6 order-lg-1">
                     <div class="tours__item__text">
@@ -119,8 +119,8 @@
                             <ul>
                                 <li>
                                     <i class="fa fa-clock-o"></i>
-                                    <span>8:00pm</span>
-                                    <span>Dec 15, 2019</span>
+                                    <span>${evento.hora_inicio}</span>
+                                    <span>${evento.data_evento}</span>
                                 </li>
                                 <li>
                                     <i class="fa fa-map-marker"></i>
@@ -152,6 +152,7 @@
     <!-- Footer Section Begin -->
     <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png">
         <div class="container">
+
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="footer__address">

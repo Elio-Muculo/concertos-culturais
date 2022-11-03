@@ -2,6 +2,7 @@ package com.cultural.eventosculturais.controller.dao;
 
 import com.cultural.eventosculturais.controller.utils.ConnectionFactory;
 import com.cultural.eventosculturais.model.Evento;
+import com.cultural.eventosculturais.model.Utilizador;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,6 +16,20 @@ public class EventoDao {
 
     public EventoDao() {
         connection = new ConnectionFactory().getConnection();
+    }
+
+    public void altera(Evento evento) {
+        String sql = "UPDATE evento set numero_bilhete = numero_bilhete - ?  WHERE codigo = ?";
+        try {
+            PreparedStatement stmt = this.connection.prepareStatement(sql);
+            stmt.setInt(1, evento.getNumero_bilhete());
+            stmt.setInt(2, evento.getCodigo());
+
+            stmt.execute();
+            stmt.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

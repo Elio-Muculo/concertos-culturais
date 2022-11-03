@@ -42,14 +42,14 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2">
                     <div class="header__logo">
-                        <a href="index.jsp"><img src="./img/logo.jpg" height="58" alt=""></a>
+                        <a href="InicioServlet"><img src="./img/logo.jpg" height="58" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li><a href="index.jsp">página inicial</a></li>
+                                <li><a href="InicioServlet">página inicial</a></li>
                                 <li><a href="sobre.jsp">Sobre</a></li>
                                 <li  class="active"><a href="EventosServlet">Eventos</a></li>
                                 <li><a href="contacto.jsp">Contacto</a></li>
@@ -93,23 +93,33 @@
     <!-- Tours Section Begin -->
     <section class="tours spad">
         <div class="container">
+            <c:if test="${msg != null}">
+                <div class="alert alert-danger alert-dismissible fade show js-alert" role="alert">
+                        ${msg}
+                </div>
+            </c:if>
+            <c:if test="${msge != null}">
+                <div class="alert alert-success alert-dismissible fade show js-alert" role="alert">
+                        ${msge}
+                </div>
+            </c:if>
             <div class="row">
                 <div class="col-lg-6 order-lg-1">
                     <div class="tours__item__text">
-                        <h2>${evento.name}</h2>
+                        <h2>${bilhete.name}</h2>
                         <div class="tours__text__widget">
                             <ul>
                                 <li>
                                     <i class="fa fa-clock-o"></i>
-                                    <span>8:00pm</span>
-                                    <span>Dec 15, 2019</span>
+                                    <span>${bilhete.hora_inicio}</span>
+                                    <span>${bilhete.data_evento}</span>
                                 </li>
                                 <li>
                                     <i class="fa fa-map-marker"></i>
-                                    ${evento.local_evento}
+                                    ${bilhete.local_evento}
                                 </li>
                             </ul>
-                            <div class="price">MZN ${evento.valor_evento}</div>
+                            <div class="price">MZN ${bilhete.valor_evento}</div>
                         </div>
                         <div class="tours__text__desc">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aperiam consequatur
@@ -121,7 +131,7 @@
                 </div>
                 <div class="col-lg-6 order-lg-2">
                     <div class="tours__item__pic">
-                        <img src="img/events/evento-${evento.codigo}.jpg" alt="" width="475" height="475">
+                        <img src="img/events/evento-${bilhete.codigo}.jpg" alt="" width="475" height="475">
                     </div>
                 </div>
             </div>
@@ -133,7 +143,9 @@
     <section class="skills">
         <div class="container">
             <div class="row">
-                <form action="" style="display: flex" class="mx-4 mx-md-0">
+                <form action="Bilhete" method="post" style="display: flex" class="mx-4 mx-md-0">
+                    <input type="hidden" name="id" value="${bilhete.codigo}">
+                    <input type="hidden" name="espectador_id" value="${user.codigo}">
                     <div class="col-lg-9 p-0" >
                     <div class="skills__content">
                         <div class="section-title">
@@ -223,6 +235,7 @@
     </footer>
     <!-- Footer Section End -->
 
+
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -233,6 +246,15 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        if (document.querySelector('.js-alert')) {
+            document.querySelectorAll('.js-alert').forEach(function($el) {
+                setTimeout(() => {
+                    $el.classList.remove('show');
+                }, 4000);
+            });
+        }
+    </script>
 
     <!-- Music Plugin -->
     <script src="js/jquery.jplayer.min.js"></script>

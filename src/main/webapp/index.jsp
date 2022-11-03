@@ -44,14 +44,14 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2">
                     <div class="header__logo">
-                        <a href="home"><img src="./img/logo.jpg" height="58" alt=""></a>
+                        <a href="InicioServlet"><img src="./img/logo.jpg" height="58" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./index.jsp">pagina inicial</a></li>
+                                <li class="active"><a href="InicioServlet">pagina inicial</a></li>
                                 <li  ><a href="sobre.jsp">Sobre</a></li>
                                 <li ><a href="EventosServlet">Eventos</a></li>
                                 <li><a href="contacto.jsp">Contacto</a></li>
@@ -110,13 +110,13 @@
             </div>
             <div class="row">
                 <div class="event__slider owl-carousel">
-                    <c:forEach var="eventos" items="${eve.lista}">
+                    <c:forEach var="eventos" items="${evento}">
                     <a href="Bilhete?id=${eventos.codigo}">
                     <div class="col-lg-4">
                         <div class="event__item">
-                            <div class="event__item__pic set-bg" data-setbg="img/Untitled.png">
+                            <div class="event__item__pic set-bg" data-setbg="img/events/evento-${eventos.codigo}.jpg">
                                 <div class="tag-date">
-                                    <span>Dec 15, 2019</span>
+                                    <span>${eventos.data_evento}</span>
                                 </div>
                             </div>
                             <div class="event__item__text">

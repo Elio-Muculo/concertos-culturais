@@ -43,7 +43,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li><a href="index.jsp">página inicial</a></li>
+                                <li><a href="">página inicial</a></li>
                                 <li><a href="sobre.jsp">Sobre</a></li>
                                 <li><a href="EventosServlet">Eventos</a></li>
                                 <li class="active"><a href="contacto.jsp">Contacto</a></li>

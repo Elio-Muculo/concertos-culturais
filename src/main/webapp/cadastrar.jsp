@@ -36,7 +36,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="background-color: #febc0d">
             <div class="container">
-                <a class="navbar-brand" style="color: #000" href="index.jsp">
+                <a class="navbar-brand" style="color: #000" href="InicioServlet">
                     Teatro Gungu | Apresenta.
                 </a>
             </div>

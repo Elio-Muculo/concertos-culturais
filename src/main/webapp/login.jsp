@@ -37,7 +37,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="background-color: #febc0d">
             <div class="container">
-                <a class="navbar-brand" style="color: #000" href="index.jsp">
+                <a class="navbar-brand" style="color: #000" href="InicioServlet">
                     Teatro Gungu |  Apresenta.
                 </a>
             </div>
@@ -51,13 +51,12 @@
                 </div>
                 <div class="col-md-5 mt-md-0 mt-5">
                     <div>
-
                         <div class="card-header" style="background-color: #febc0d">Iniciar Sessão</div>
                         <div class="card-body align-content-center pt-3 mt-3 pt-md-5 mt-md-5">
 
                             <form method="POST" action="LoginServlet">
                                <c:if test="${msg != null}">
-                                   <div class="alert alert-danger" role="alert">
+                                   <div class="alert alert-danger alert-dismissible fade show js-alert" role="alert">
                                            ${msg}
                                    </div>
                                </c:if>
@@ -119,4 +118,22 @@
 </div>
 
 </body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/jquery.barfiller.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    if (document.querySelector('.js-alert')) {
+        document.querySelectorAll('.js-alert').forEach(function($el) {
+            setTimeout(() => {
+                $el.classList.remove('show');
+            }, 4000);
+        });
+    }
+</script>
 </html>
