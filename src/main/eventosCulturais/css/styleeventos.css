@@ -13,7 +13,7 @@ body{
 
 .divCentral{
         background-color: white;
-        margin-top:1%;
+        margin-top:3%;
         padding-top:2%; 
         /* border-radius:1%; */
 }
@@ -21,3 +21,28 @@ body{
 span{
         color: #fec107;
 }
+
+
+
+table {
+        width: 90%;
+        margin-left: 5%;
+        /* font-family: arial, sans-serif; */
+        border-collapse: collapse;
+        /* width: 100%; */
+      }
+      
+      td, th {
+        border: 1px solid #000000;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      thead{
+        color: aliceblue;
+        background-color:#000000;
+        border: 1px solid white;
+      }
