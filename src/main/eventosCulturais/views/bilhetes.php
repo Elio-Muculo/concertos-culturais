@@ -17,9 +17,7 @@ ob_start();
 <body class="container">
     <?php include __DIR__ . '../../config/crud.php';
     $id = $_GET['id'];
-    echo "<hr>";
-    echo $id;
-    echo "<hr>";
+    
 
     $dados = read("Select * from bilhete INNER JOIN espectador ON espectador.espectador_id = bilhete.espectador_id where bilhete.evento_id = $id;");
 
@@ -28,7 +26,9 @@ ob_start();
     <div class="divCentral">
         <center>
             <h1>Lista venda de Bilhetes</h1>
-            <h3>Nome do evento: <?php //echo $_SESSION['perfil']; 
+            <h3>Nome do evento: <?php $dado = read("Select nome from evento where codigo = $id");
+             foreach ($dado as $a) {  
+            echo $a['nome'];}
                                 ?></h3>
 
             <?php $h = read("SELECT COUNT(*) FROM bilhete where bilhete.evento_id = $id;");
@@ -82,7 +82,7 @@ ob_start();
             </tbody>
         </table>
         <br><br>
-        <h3>admin: </h3>
+        <h5 style="padding: 1%;">admin: </h5>
     </div>
 </body>
 

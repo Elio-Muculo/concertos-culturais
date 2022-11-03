@@ -54,21 +54,21 @@ ob_start();
         <?php foreach ($dados as $a) {  ?>
 
             <div style="margin-bottom:20px; padding: 20px; border-bottom: 1px solid lightgray; display: block; text-align: justify;">
+                <div><!--  style="width:50%; box-shadow: inset 0px 0px 2px rgb(58, 48, 3); padding:3px;"> -->
+                <h4 >
+                <?php echo "Nome do Evento: #"; ?> <?php echo $a['nome']; ?>
+            </h4></div>
+            <br>
 
-                <h3 style="color:brown"><?php echo "Nome do Evento: #"; ?> <?php echo $a['nome']; ?></h3><br>
-
-
-                <!-- <h3>
-                Promotor do evento: <span style="color: red"><?php echo ($a['promotor']); ?></span>
-            </h3><br> -->
-                <div class="row">
+                <div class="row hidel">
                     <div class="col-lg-4 col-sm-6">
-                        <img src="../../webapp/img/<?php echo $a['cartaz']; ?>" style="width: 100%;" alt="cartaz">
+                        <img src="../../webapp/img/<?php echo $a['cartaz']; ?>" style="width: 100%; padding: 7px;" alt="cartaz">
                         <?php //echo $a['cartaz']; 
                         ?>
                     </div>
 
                     <div class="col-lg-8 col-sm-6 texto">
+                        <div style="padding: 15px;">
                         <label>
                             Nome do Evento: <span><?php echo $a['nome']; ?></span>
                         </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -101,28 +101,31 @@ ob_start();
                         </label>
 
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+                        </div>
                     </div>
+                    <p style="text-align: right; padding-bottom: 1px;">
+
+                            <!-- <label style="color: green"><a href="./ver.php?id=<?php //echo $a['id']; 
+                                                                                    ?>">Ver</a></label>
+&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+                            <label type="button" class="btn btn-dark">
+                                <a href="EditarEvento.php?id=<?php echo $a['codigo']; ?>" style="color:aliceblue; text-decoration:none">Editar evento</a></label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <label type="button" class="btn btn-warning">
+                                <a href="bilhetes.php?id=<?php echo $a['codigo']; ?>" style="text-align: right; color:aliceblue; text-decoration:none">Ver bilhetes</a></label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                        </p>
                 </div>
 
 
 
 
-                <p style="text-align: right;">
 
-                    <!-- <label style="color: green"><a href="./ver.php?id=<?php //echo $a['id']; 
-                                                                            ?>">Ver</a></label>
-		 		&nbsp;&nbsp;&nbsp;&nbsp; -->
-
-                    <label type="button" class="btn btn-dark">
-                        <a href="EditarEvento.php?id=<?php echo $a['codigo']; ?>" style="color:aliceblue; text-decoration:none">Editar evento</a></label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-
-                    <label type="button" class="btn btn-warning">
-                        <a href="bilhetes.php?id=<?php echo $a['codigo']; ?>" style="text-align: right; color:aliceblue; text-decoration:none">Ver bilhetes</a></label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-
-
-                </p>
 
 
 
