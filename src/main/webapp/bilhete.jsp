@@ -119,7 +119,7 @@
                                     ${bilhete.local_evento}
                                 </li>
                             </ul>
-                            <div class="price">MZN ${bilhete.valor_evento}</div>
+                            <div class="price">MZN <span id="preco">${bilhete.valor_evento}</span></div>
                         </div>
                         <div class="tours__text__desc">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aperiam consequatur
@@ -166,14 +166,12 @@
                         <div class="skill__bar__item mt-5">
                             <p>Quantidade</p>
                             <div id="bar" class="barfiller">
-                                <input type="number" class="form-control" name="qtd" id="">
+                                <input type="number" class="form-control" name="qtd" id="qtd">
                             </div>
                         </div>
                         <div class="skill__bar__item mt-5">
-                            <p>Total por pagar:</p>
+                            <p>Total por pagar:  <span class="mt-5 pt-2" id="valor">0.00MZN</span></p>
                             <div id="bar2" class="barfiller">
-                                <span class="tip"></span>
-                                <span class="fill" data-percentage="95"></span>
                             </div>
                         </div>
                     </div>
@@ -188,77 +186,21 @@
     <!-- Skills Section End -->
 
 
-
-
-    <!-- Footer Section Begin -->
-    <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer__address">
-                        <ul>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                <p>Phone</p>
-                                <h6>1-677-124-44227</h6>
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope"></i>
-                                <p>Email</p>
-                                <h6>eventos@gungu.com</h6>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 offset-lg-1 col-md-6">
-                    <div class="footer__social">
-                        <h2>Teatro Gungu</h2>
-                        <div class="footer__social__links">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6">
-                    <div class="footer__newslatter">
-                        <h4>Fique Conectado!</h4>
-                        <form action="#">
-                            <input type="text" placeholder="Email">
-                            <button type="submit"><i class="fa fa-send-o"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
-
-
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <jsp:include page="footer.jsp"></jsp:include>
     <script>
-        if (document.querySelector('.js-alert')) {
-            document.querySelectorAll('.js-alert').forEach(function($el) {
-                setTimeout(() => {
-                    $el.classList.remove('show');
-                }, 4000);
-            });
-        }
-    </script>
+        var valor = document.getElementById("valor");
+        var preco = document.getElementById("preco");
+        var qtd = document.getElementById("qtd");
 
-    <!-- Music Plugin -->
-    <script src="js/jquery.jplayer.min.js"></script>
-    <script src="js/jplayerInit.js"></script>
+        qtd.addEventListener("input", function (e) {
+            e.preventDefault();
+                console.log(qtd.value);
+                console.log(preco.innerHTML);
+                var total = preco.innerHTML * qtd.value;
+
+                valor.innerText = total + "MZN";
+        })
+    </script>
 </body>
 
 </html>
