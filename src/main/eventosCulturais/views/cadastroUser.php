@@ -19,7 +19,7 @@ ob_start();
 
   <div class="header__nav">
     <img src="../img/download.jpg" style="width: 60px; border-radius:5%; float: left; margin-left:10px; margin-top:5px;" alt="logo">
-    <h2 style="float: left">Cadastrar Usuario</h2>
+
     <nav class="header__menu mobile-menu">
       <ul>
         <li class="active"><a href="dashbord.php">Home</a></li>
@@ -33,7 +33,7 @@ ob_start();
   <div class="wrapper" style="margin-top: 120px;">
 
     <div class="title">
-      Criar Novo User
+      Criar Novo Admin
     </div>
     <form action="../Controller/userController.php" method="POST">
       <div class="form">
@@ -45,14 +45,7 @@ ob_start();
           <label>Senha</label>
           <input type="Password" name="senha" class="input" placeholder="****">
         </div>
-        <div class="inputfield">
-          <label>Perfil</label>
-          <input type="text" name="perfil" class="input" placeholder="admin">
-        </div>
-        <div class="inputfield">
-          <label>Perfil</label>
-          <input type="text" name="perfil" class="input" placeholder="admin">
-        </div>
+
 
         <div class="inputfield">
           <!-- <button class="btn2"><a href="dashbord.php">Voltar</a></button> -->

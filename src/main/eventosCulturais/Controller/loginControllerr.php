@@ -28,7 +28,7 @@ if ($dadoss['senha'] == "") {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $senha = $_POST['senha'];
+    $senha = MD5($_POST['senha']);
     $data = [
         'email' => $_POST['email']
     ];

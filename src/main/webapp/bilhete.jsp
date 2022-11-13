@@ -122,16 +122,13 @@
                             <div class="price">MZN <span id="preco">${bilhete.valor_evento}</span></div>
                         </div>
                         <div class="tours__text__desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aperiam consequatur
-                                culpa, cupiditate doloremque dolorum ducimus eius</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aperiam consequatur
-                                culpa, cupiditate doloremque dolorum ducimus eius</p>
+                            <p>${bilhete.descricao}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-2">
                     <div class="tours__item__pic">
-                        <img src="img/events/evento-${bilhete.codigo}.jpg" alt="" width="475" height="475">
+                        <img src="img/${bilhete.cartaz}" alt="" width="475" height="475">
                     </div>
                 </div>
             </div>

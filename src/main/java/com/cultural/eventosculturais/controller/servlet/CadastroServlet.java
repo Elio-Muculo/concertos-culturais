@@ -27,12 +27,15 @@ public class CadastroServlet extends HttpServlet {
         }
 
         // mostrar mensagens para usuario
+        HttpSession session =  request.getSession();
         String hashedPass = BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt());
         utilizador.setEmail(request.getParameter("email"));
         utilizador.setSenha(hashedPass);
         utilizadorDao.adiciona(utilizador);
-
-        RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+        Utilizador lastInserted = utilizadorDao.getLastInsertedUser();
+        System.out.println(lastInserted.getCodigo());
+        session.setAttribute("user_id", lastInserted.getCodigo());
+        RequestDispatcher rd = request.getRequestDispatcher("/perfil.jsp");
         rd.forward(request, response);
     }
 }

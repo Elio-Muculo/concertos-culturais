@@ -53,6 +53,7 @@ public class EventoDao {
                 evento2.setCartaz(set.getString("cartaz"));
                 evento2.setValor_evento(set.getDouble("valor_evento"));
                 evento2.setAdmin_id(set.getInt("admin_id"));
+                evento2.setDescricao(set.getString("descricao"));
             }
 
             stmt.close();
@@ -83,6 +84,7 @@ public class EventoDao {
                 evento3.setCartaz(set.getString("cartaz"));
                 evento3.setValor_evento(set.getDouble("valor_evento"));
                 evento3.setAdmin_id(set.getInt("admin_id"));
+                evento3.setDescricao(set.getString("descricao"));
 
                 evento2.add(evento3);
             }

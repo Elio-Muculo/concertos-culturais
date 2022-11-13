@@ -27,7 +27,7 @@ ob_start();
 
     <div class="header__nav" >
         <img src="../img/download.jpg" style="width: 70px; border-radius:5%; float: left; margin-left:10px; margin-top:5px;" alt="logo">
-        <h3 style="float: left">Lista de Eventos</h3>
+
         <nav class="header__menu mobile-menu" style="padding: 18px 0 27px;">
             <ul>
                 <li class="active"><a href="dashbord.php">Home</a></li>
@@ -121,8 +121,8 @@ ob_start();
                         <p style="text-align: right; padding-bottom: 1px;">
 
 
-                            <a href="EditarEvento.php?id=<?php echo $a['codigo']; ?>" style="color:aliceblue; text-decoration:none">Editar evento</a></label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
+                           <!-- <a href="EditarEvento.php?id=<?php echo $a['codigo']; ?>" style="color:aliceblue; text-decoration:none">Editar evento</a></label>
+                            &nbsp;&nbsp;&nbsp;&nbsp; -->
 
                             <label type="button" class="btn btn-warning">
                                 <a href="bilhetes.php?id=<?php echo $a['codigo']; ?>" style="text-align: right; color:aliceblue; text-decoration:none">Ver bilhetes</a></label>
@@ -131,13 +131,6 @@ ob_start();
 
                         </p>
                     </div>
-
-
-
-
-
-
-
 
                 </div>
             <?php } ?>

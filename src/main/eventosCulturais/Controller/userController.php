@@ -32,8 +32,9 @@ if ($dadoss['senha'] == "") {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
    $email = $_POST['email'];
-   $senha = $_POST['senha'];
-   $perfil = $_POST['perfil'];
+   $senha = MD5($_POST['senha']);
+   $perfil = "admin";
+
 
 
 

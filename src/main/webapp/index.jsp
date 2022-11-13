@@ -113,7 +113,7 @@
                     <a href="Bilhete?id=${eventos.codigo}">
                     <div class="col-lg-4">
                         <div class="event__item">
-                            <div class="event__item__pic set-bg" data-setbg="img/events/evento-${eventos.codigo}.jpg">
+                            <div class="event__item__pic set-bg" data-setbg="img/${eventos.cartaz}">
                                 <div class="tag-date">
                                     <span>${eventos.data_evento}</span>
                                 </div>

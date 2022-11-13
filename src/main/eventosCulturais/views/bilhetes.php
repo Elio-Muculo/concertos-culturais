@@ -27,7 +27,7 @@ ob_start();
     ?>
     <div class="header__nav">
         <img src="../img/download.jpg" style="width: 60px; border-radius:5%; float: left; margin-left:10px; margin-top:5px;" alt="logo">
-        <h2 style="float: left">Lista de Eventos</h2>
+
         <nav class="header__menu mobile-menu">
             <ul>
                 <li class="active"><a href="dashbord.php">Home</a></li>

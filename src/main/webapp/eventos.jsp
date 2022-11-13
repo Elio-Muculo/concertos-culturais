@@ -129,17 +129,14 @@
                             <div class="price">MZN ${evento.valor_evento}</div>
                         </div>
                         <div class="tours__text__desc">
-                            <p>Held in Europe’s electronic music capital on New Year’s Eve, the seminal Funkhaus Berlin
-                                hosts an impressive roster of techno artists worthy.</p>
-                            <p>Soundtracking the leap from 2019 into 2020 in what is one of the most anticipated nights
-                                of the year, in one of the city’s most hyped venues, HYTE Berlin NYE is the</p>
+                            <p>${evento.descricao}</p>
                         </div>
                         <a href="Bilhete?id=${evento.codigo}" class="primary-btn border-btn">Comprar Bilhete</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="tours__item__pic">
-                        <img src="img/events/evento-${evento.codigo}.jpg" alt="${evento.name}" width="475" height="475">
+                        <img src="img/${evento.cartaz}" alt="${evento.name}" width="475" height="475">
                     </div>
                 </div>
             </div>

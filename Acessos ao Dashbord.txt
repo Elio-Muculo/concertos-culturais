@@ -1,0 +1,11 @@
+Dados de acesso:
+Email - admin@gmail.com
+Senha - 1234.
+
+Acesso a área administrativa.
+Criar um virtualhost apontando a pasta ->  eventos-culturais-integrado/src/main/eventosCulturais/ 
+Ou
+Guardar o projecto numa pasta com acesso ao servidor local (localhost).
+Ex: 
+	C:\xampp\htdocs
+E acessar a seguinte URL: -> http://localhost/eventos-culturais-integrado/src/main/eventosCulturais/

@@ -13,6 +13,8 @@ public class Evento {
     private double valor_evento;
     private int admin_id;
 
+    private String descricao;
+
     public int getCodigo() {
         return codigo;
     }
@@ -100,4 +102,14 @@ public class Evento {
     public void setAdmin_id(int admin_id) {
         this.admin_id = admin_id;
     }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+
 }

@@ -19,7 +19,7 @@ ob_start();
 
    <div class="header__nav">
       <img src="../img/download.jpg" style="width: 60px; border-radius:5%; float: left; margin-left:10px; margin-top:5px;" alt="logo">
-      <h2 style="float: left">Cadastrar Eventos</h2>
+
       <nav class="header__menu mobile-menu">
          <ul>
             <li class="active"><a href="dashbord.php">Home</a></li>
@@ -72,6 +72,11 @@ ob_start();
             <div class="inputfield">
                <label>Cartaz do Evento</label>
                <input type="file" class="input" name="cartaz" value="cartaz">
+            </div>
+            <div class="inputfield">
+                 <label>Descricao</label>
+                 <textarea name="descricao" class="input" rows="4" cols="30">
+                 </textarea>
             </div>
 
             <center>
