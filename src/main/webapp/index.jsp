@@ -145,29 +145,36 @@
                         <div class="col-lg-6 p-0 order-lg-1 col-md-6 order-md-1">
                             <div class="service__item deep-bg">
                                 <img src="img/services/service-1.png" alt="">
-                                <h4>Wedding</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                <h4> Companhia de Teatro Gungu</h4>
+                                <p>É uma companhia de teatro profissional de Maputo, Moçambique fundada em 1992 por Gilberto Mendes.
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-6 p-0 order-lg-2 col-md-6 order-md-2">
                             <div class="service__item">
                                 <img src="img/services/service-2.png" alt="">
-                                <h4>Clubs and bar</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                <h4>Gilberto Mendes</h4>
+                                <p> É o diretor da companhia, e já foi agraciado com o prémio de “Mérito Lusófono” pela Fundação
+                                    Luso-Brasileira para o Desenvolvimento da Língua Portuguesa.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 p-0 order-lg-4 col-md-6 order-md-4">
                             <div class="service__item deep-bg">
                                 <img src="img/services/service-4.png" alt="">
-                                <h4>DJ lessons</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                <h4>Prémios</h4>
+                                <p> A companhia tem apresentado peças interruptamente até 2019. Até 2010 já havia apresentado 59 peças,
+                                    tendo recebido diversos prémios e já representou em vários países.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 p-0 order-lg-3 col-md-6 order-md-3">
                             <div class="service__item">
                                 <img src="img/services/service-3.png" alt="">
-                                <h4>Corporate events</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                <h4>Peças de destaque</h4>
+                                    <p>
+                                    "Amor, Aguenta"(2018);
+                                    "My Love"(2018);
+                                    "Jogo de Intrigas" (2017);
+                                    "Mãe Coragem" (2017);</p>
                             </div>
                         </div>
                     </div>
