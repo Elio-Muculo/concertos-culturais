@@ -43,7 +43,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li><a href="">página inicial</a></li>
+                                <li><a href="InicioServlet">página inicial</a></li>
                                 <li><a href="EventosServlet">Eventos</a></li>
                                 <li class="active"><a href="contacto.jsp">Contacto</a></li>
                             </ul>
@@ -92,26 +92,25 @@
                 <div class="col-lg-4">
                     <div class="contact__address">
                         <div class="section-title">
-                            <h2>Contact info</h2>
+                            <h2>Contactos</h2>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.</p>
+                        <p> Teatro e Televisão Gungu</p>
                         <ul>
                             <li>
                                 <i class="fa fa-map-marker"></i>
-                                <h5>Address</h5>
-                                <p>Los Angeles Gournadi, 1230 Bariasl</p>
+                                <h5>Endereço</h5>
+                                <p>Rua Travessa de Varreta</p>
                             </li>
                             <li>
                                 <i class="fa fa-phone"></i>
-                                <h5>Hotline</h5>
-                                <span>1-677-124-44227</span>
-                                <span>1-688-356-66889</span>
+                                <h5>Telefone</h5>
+                                <span>+(258)87 052 4206</span>
+
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i>
                                 <h5>Email</h5>
-                                <p>Support@gamail.com</p>
+                                <p>eventos@gungu.com</p>
                             </li>
                         </ul>
                     </div>
@@ -119,18 +118,18 @@
                 <div class="col-lg-8">
                     <div class="contact__form">
                         <div class="section-title">
-                            <h2>Get in touch</h2>
+                            <h2>Entre em contacto</h2>
                         </div>
-                        <p>Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                            gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                        <p>Entre em contacto conosco, garanta o seu bilhete e venha disfrutar do melhor teatro, música
+                        e cultura.</p>
                         <form action="#">
                             <div class="input__list">
-                                <input type="text" placeholder="Name">
+                                <input type="text" placeholder="Nome">
                                 <input type="text" placeholder="Email">
                                 <input type="text" placeholder="Website">
                             </div>
-                            <textarea placeholder="Comment"></textarea>
-                            <button type="submit" class="site-btn">SEND MESSAGE</button>
+                            <textarea placeholder="Comentário"></textarea>
+                            <button type="submit" class="site-btn">ENVIAR MENSAGEM</button>
                         </form>
                     </div>
                 </div>
